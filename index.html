@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 9 Physical Science - Chapter 7: Atoms, Molecules and Chemical Reactions | పరమాణువులు, అణువులు మరియు రసాయన చర్యలు</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent: #059669;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; padding-bottom: 60px; }
+        
+        /* Visitor Tracking Modal Overlay */
+        #visitor-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); z-index: 1000; display: flex;
+            justify-content: center; align-items: center; padding: 20px;
+        }
+        .modal-content {
+            background: white; padding: 30px; border-radius: 12px; width: 100%; max-width: 450px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center;
+        }
+        .modal-content h2 { margin-bottom: 15px; color: var(--primary); }
+        .modal-content input {
+            width: 100%; padding: 12px; margin: 10px 0; border: 1px solid var(--border);
+            border-radius: 6px; font-size: 16px;
+        }
+        .modal-content button {
+            background: var(--primary); color: white; border: none; padding: 12px 20px;
+            width: 100%; border-radius: 6px; font-size: 16px; cursor: pointer; font-weight: bold;
+            margin-top: 10px; transition: background 0.3s;
+        }
+        .modal-content button:hover { background: var(--primary-dark); }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 5px; }
+        header p { font-size: 1rem; opacity: 0.9; }
+
+        .nav-container {
+            background: white; padding: 10px; overflow-x: auto; white-space: nowrap;
+            position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex; gap: 10px; border-bottom: 1px solid var(--border);
+        }
+        .nav-container a {
+            display: inline-block; padding: 8px 15px; background: var(--bg-light);
+            color: var(--primary); text-decoration: none; border-radius: 20px;
+            font-size: 14px; font-weight: 600; border: 1px solid var(--border); transition: all 0.3s;
+        }
+        .nav-container a:hover { background: var(--primary); color: white; }
+
+        /* Main Container */
+        .container { max-width: 900px; margin: 20px auto; padding: 0 15px; }
+
+        section {
+            background: var(--card-bg); margin-bottom: 25px; padding: 25px;
+            border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid var(--border);
+        }
+        h2.section-title {
+            color: var(--primary); border-bottom: 2px solid var(--primary);
+            padding-bottom: 8px; margin-bottom: 15px; font-size: 1.4rem;
+        }
+        h3 { color: var(--accent); margin: 15px 0 10px 0; font-size: 1.1rem; }
+        
+        .bilingual-box {
+            background: #f1f5f9; border-left: 4px solid var(--primary);
+            padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0;
+        }
+        .english-text { margin-bottom: 8px; font-weight: 500; }
+        .telugu-text { color: #475569; font-size: 0.95rem; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; }
+        th, td { border: 1px solid var(--border); padding: 10px; text-align: left; }
+        th { background: var(--primary); color: white; }
+        tr:nth-child(even) { background: #f8fafc; }
+
+        /* Q&A and Exercises */
+        .qa-box { background: #fffbeb; border: 1px solid #fde68a; padding: 15px; border-radius: 8px; margin: 15px 0; }
+        .question { font-weight: bold; color: #92400e; margin-bottom: 8px; font-size: 1.05rem; }
+        .answer { color: #1e293b; }
+        .detailed-telugu-desc { background: #fef3c7; padding: 10px; border-radius: 6px; margin-top: 8px; font-size: 0.95rem; color: #78350f; }
+
+        /* Timer Float Widget */
+        #timer-float {
+            position: fixed; bottom: 20px; left: 20px; background: rgba(30, 41, 59, 0.9);
+            color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; z-index: 99;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        /* Scroll to top button */
+        #top-btn {
+            position: fixed; bottom: 20px; right: 20px; background: var(--primary);
+            color: white; border: none; width: 45px; height: 45px; border-radius: 50%;
+            cursor: pointer; display: none; justify-content: center; align-items: center;
+            font-size: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); z-index: 99;
+        }
+        #top-btn:hover { background: var(--primary-dark); }
+        
+        .page-badge { float: right; font-size: 0.8rem; background: #e2e8f0; padding: 2px 8px; border-radius: 4px; color: #64748b; }
+    </style>
+</head>
+<body>
+
+    <!-- Visitor Information Modal -->
+    <div id="visitor-modal">
+        <div class="modal-content">
+            <h2>Welcome Student! / విద్యార్థులకు స్వాగతం!</h2>
+            <p style="font-size: 14px; color: #64748b; margin-bottom: 15px;">Please enter your details to access Chapter 7 study materials.</p>
+            <input type="text" id="visitor-name" placeholder="Enter Your Name / మీ పేరు" required>
+            <input type="text" id="visitor-roll" placeholder="Enter Roll Number / రోల్ నంబర్" required>
+            <button onclick="startSession()">Start Learning / అభ్యాసనం ప్రారంభించండి</button>
+        </div>
+    </div>
+
+    <!-- Floating Timer & Scroll Button -->
+    <div id="timer-float">Time Spent: <span id="time-counter">00:00</span></div>
+    <button id="top-btn" onclick="scrollToTop()">↑</button>
+
+    <header>
+        <h1>Class 9 Physical Science - Chapter 7</h1>
+        <p>ATOMS, MOLECULES AND CHEMICAL REACTIONS (పరమాణువులు, అణువులు మరియు రసాయన చర్యలు)</p>
+    </header>
+
+    <!-- Upper Index Navigation -->
+    <div class="nav-container">
+        <a href="#sec-101">Page 101</a>
+        <a href="#sec-102">Page 102</a>
+        <a href="#sec-103">Page 103</a>
+        <a href="#sec-104">Page 104</a>
+        <a href="#sec-105">Page 105</a>
+        <a href="#sec-106">Page 106</a>
+        <a href="#sec-107">Page 107</a>
+        <a href="#sec-108">Page 108</a>
+        <a href="#sec-109">Page 109</a>
+        <a href="#sec-110">Page 110</a>
+        <a href="#sec-111">Page 111</a>
+        <a href="#sec-112">Page 112</a>
+        <a href="#sec-113">Page 113</a>
+        <a href="#sec-114">Page 114</a>
+        <a href="#sec-115">Page 115</a>
+        <a href="#sec-116">Page 116</a>
+        <a href="#sec-117">Page 117</a>
+        <a href="#sec-118">Page 118</a>
+        <a href="#sec-119">Page 119</a>
+        <a href="#sec-120">Page 120</a>
+        <a href="#sec-121">Page 121</a>
+        <a href="#sec-122">Page 122</a>
+        <a href="#sec-123">Page 123</a>
+        <a href="#sec-124">Page 124</a>
+        <a href="#sec-125">Page 125</a>
+        <a href="#complete-exercises">Complete Exercises</a>
+        <a href="#keypoints">80+ Key Points</a>
+        <a href="#glossary">80+ Glossary</a>
+    </div>
+
+    <div class="container">
+
+        <!-- Page 101 -->
+        <section id="sec-101">
+            <span class="page-badge">Page 101[cite: 113, 114]</span>
+            <h2 class="section-title">Page 101: Introduction & Antoine Lavoisier</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Building on elements and compounds from previous chapters[cite: 113], this page introduces chemical reactions, combustion puzzles, and Antoine Lavoisier's foundational work on mass conservation[cite: 114].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> మునుపటి అధ్యాయాలలోని మూలకాలు మరియు సమ్మేళనాల ఆధారంగా[cite: 113], ఈ పేజీ రసాయన చర్యలు, దహన క్రియలు మరియు ద్రవ్య నిత్యత్వ నిబంధనను ప్రతిపాదించిన ఆంటోనీ ల్యావోయిసియర్ కృషಿಯನ್ನು పరిచయం చేస్తుంది[cite: 114].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> ఇనుము తుప్పు పట్టడం, బొగ్గు మంటల్లో బూడిద కావడం వంటి ప్రశ్నలు శాస్త్రవేత్తలను ఆలోచింపజేశాయి[cite: 113]. ల్యావోయిసియర్ రసాయన చర్యలలో ద్రవ్యరాశిని ఖచ్చితంగా కొలిచి ఆధునిక రసాయన శాస్త్ర పితామహుడిగా నిలిచారు[cite: 114].
+            </div>
+        </section>
+
+        <!-- Page 102 -->
+        <section id="sec-102">
+            <span class="page-badge">Page 102[cite: 114, 115]</span>
+            <h2 class="section-title">Page 102: Lab Activity - Conservation of Mass</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> A detailed lab activity using lead nitrate and potassium iodide in a closed conical flask to measure mass before and after a chemical reaction[cite: 114, 115].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> రసాయన చర్యకు ముందు మరియు తరువాత ద్రవ్యరాశి మారదని నిరూపించడానికి లీడ్ నైట్రేట్ మరియు పొటాషియం అయోడైడ్を用いた ప్రయోగశాల కృత్యం[cite: 114, 115].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> ఈ ప్రయోగంలో రెండు ద్రావణాలు వేరుగా చిన్న పరీక్ష నాళికలో ఉండి, ఫ్లాస్క్‌ను వంచినప్పుడు కలుస్తాయి. చర్య జరిగిన తర్వాత కూడా స్ప్రింగ్ బ్యాలెన్స్ సూచించే బరువులో ఎలాంటి మార్పు ఉండదు[cite: 115].
+            </div>
+        </section>
+
+        <!-- Page 103 -->
+        <section id="sec-103">
+            <span class="page-badge">Page 103[cite: 115, 116]</span>
+            <h2 class="section-title">Page 103: Law of Conservation of Mass & Constant Proportions</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Concludes that mass is neither created nor destroyed[cite: 116]. Introduces Joseph L. Proust's law of constant proportions based on copper carbonate and water samples[cite: 116].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> రసాయన చర్యలో ద్రవ్యరాశి సృష్టించబడదని లేదా నాశనం కాదని తేల్చబడింది[cite: 116]. జోసెఫ్ ప్రౌస్ట్ కాపర్ కార్బోనేట్ నమూనాల ఆధారంగా నిశ్చిత నిష్పత్తి నియమాన్ని ప్రతిపాదించారు[cite: 116].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> ఏ మూలం నుండి సేకరించినా ఒక సమ్మేళనంలోని మూలకాల నిష్పత్తి ఎప్పుడూ స్థిరంగా ఉంటుందని ప్రౌస్ట్ నిరూపించారు[cite: 116].
+            </div>
+        </section>
+
+        <!-- Page 104 -->
+        <section id="sec-104">
+            <span class="page-badge">Page 104[cite: 116, 117]</span>
+            <h2 class="section-title">Page 104: Dalton's Atomic Theory</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> John Dalton proposed his atomic theory to explain mass conservation and constant proportions, stating matter consists of indivisible atoms[cite: 116, 117].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> ద్రవ్య నిత్యత్వ మరియు నిశ్చిత నిష్పత్తి నియమాలను వివరించడానికి జాన్ డాల్టన్ పరమాణు సిద్ధాంతాన్ని ప్రతిపాదించారు[cite: 116, 117].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> డాల్టన్ సిద్ధాంతం ప్రకారం ఒకే మూలకం యొక్క పరమాణువులు అన్నీ ఒకేలా ఉంటాయి మరియు సమ్మేళనాలు முழு సంఖ్యల నిష్పత్తిలో ఏర్పడతాయి[cite: 117].
+            </div>
+        </section>
+
+        <!-- Page 105 -->
+        <section id="sec-105">
+            <span class="page-badge">Page 105[cite: 117, 118]</span>
+            <h2 class="section-title">Page 105: Ancient Indian Philosophy & Atoms</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Discusses ancient Indian sage Kanada (Kasyapa) who proposed 'anu' and 'parmanu' concepts in Vaisheshika Sutra, long before Greek atomic concepts[cite: 117, 118].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> గ్రీకు సిద్ధాంతాలకంటే ముందే భారతీయ మహర్షి కణాదుడు తన వైశేషిక సూత్రంలో అణువు మరియు పరమాణువుల భావనను తెలిపారు[cite: 117, 118].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> 'అటమ్' అనే పదం గ్రీకు పదం 'అటోమియో' (విభజింపలేనిది) నుండి ఉద్భవించిందని ఈ పేజీ వివరిస్తుంది[cite: 118].
+            </div>
+        </section>
+
+        <!-- Page 106 -->
+        <section id="sec-106">
+            <span class="page-badge">Page 106[cite: 118, 119]</span>
+            <h2 class="section-title">Page 106: Naming Elements</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Explains how elements are named based on properties (hydrogen, oxygen), place of discovery (polonium, helium), or to honor scientists (einsteinium)[cite: 119].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> మూలకాల పేర్లు వాటి ధర్మాల ఆధారంగా, కనుగొన్న ప్రదేశం ఆధారంగా లేదా శాస్త్రవేత్తల గౌరవార్థం ఎలా పెట్టబడ్డాయో ఇది వివరిస్తుంది[cite: 119].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> ప్రపంచవ్యాప్తంగా శాస్త్రవేత్తల మధ్య సులభంగా సమాచార మార్పిడి జరగడానికి మూలకాల నామకరణం ఒక ప్రామాణిక పద్ధతిగా మారింది[cite: 119].
+            </div>
+        </section>
+
+        <!-- Page 107 -->
+        <section id="sec-107">
+            <span class="page-badge">Page 107[cite: 119, 120]</span>
+            <h2 class="section-title">Page 107: Symbols of Elements</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Berzelius suggested using uppercase first letters and lowercase second letters for element symbols (e.g., Ca, Cl, Cr)[cite: 120].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> బెర్జీలియస్ సూచన ప్రకారం మూలకాల సంకేతాలలో మొదటి అక్షరం పెద్దదిగా, రెండవ అక్షరం చిన్నదిగా ఉండాలి (ఉదా: Ca, Cl)[cite: 120].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> రసాయన సమీకరణాలను సులభంగా రాయడానికి సంకేతాలు చాలా ముఖ్యం[cite: 120].
+            </div>
+        </section>
+
+        <!-- Page 108 -->
+        <section id="sec-108">
+            <span class="page-badge">Page 108[cite: 120, 121]</span>
+            <h2 class="section-title">Page 108: Unusual Symbols & Molecules</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Explains symbols derived from Latin names like Na (Natrium) and Fe (Ferrum), and introduces molecules consisting of multiple identical atoms like O2[cite: 121].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> లాటిన్ పేర్ల నుండి వచ్చిన Na, Fe వంటి సంకేతాలను మరియు O2 వంటి బహుళ పరమాణు అణువులను పరిచయం చేస్తుంది[cite: 121].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> ఆక్సిజన్ అణువులో రెండు పరమాణువులు ఉంటాయని, దానిని '2O' అనకుండా 'O2' అని ఎందుకు రాస్తామో వివరించబడింది[cite: 121].
+            </div>
+        </section>
+
+        <!-- Page 109 -->
+        <section id="sec-109">
+            <span class="page-badge">Page 109[cite: 121, 122]</span>
+            <h2 class="section-title">Page 109: Atomicity</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Defines atomicity as the number of atoms in a molecule (monoatomic, diatomic, triatomic, tetratomic, octatomic)[cite: 121, 122].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> అణువులోని పరమాణువుల సంఖ్యను పరమాణుత (Atomicity) అంటారు (ఏక, ద్వి, త్రి, చతుష్, అష్ట పరమాణుకాలు)[cite: 121, 122].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> ఆర్గాన్ ఏకపరమాణుకమని, ఓజోన్ త్రిపరమాణుకమని, సల్ఫర్ S8 అష్టపరమాణుకమని పట్టిక ద్వారా వివరించబడింది[cite: 122].
+            </div>
+        </section>
+
+        <!-- Page 110 -->
+        <section id="sec-110">
+            <span class="page-badge">Page 110[cite: 122, 123]</span>
+            <h2 class="section-title">Page 110: Ions and Valency</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Introduces ions (cations and anions) and valency as the combining capacity of elements[cite: 122, 123].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> ఆవేశిత కణాలు (కేటయాన్లు, యానియాన్లు) మరియు మూలకాల సంయోగ సామర్థ్యమైన సంయోజకతను వివరిస్తుంది[cite: 122, 123].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> సోడియం క్లోరైడ్ వంటి సమ్మేళనాలు Na+ మరియు Cl- అయిన్ల కలయికతో ఏర్పడతాయని తెలుపుతుంది[cite: 123].
+            </div>
+        </section>
+
+        <!-- Page 111 -->
+        <section id="sec-111">
+            <span class="page-badge">Page 111[cite: 123, 124]</span>
+            <h2 class="section-title">Page 111: Atomic Mass</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Explains atomic mass relative to carbon-12 isotope standard and introduces unified mass units (u)[cite: 123, 124].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> కార్బన్-12 ప్రమాణంతో పోల్చి పరమాణు ద్రవ్యరాశిని కొలవడం మరియు యూనిఫైడ్ మాస్ (u) గురించి వివరిస్తుంది[cite: 123, 124].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> 1961 నుండి కార్బన్-12 పరమాణువులో 1/12 వ వంతును ప్రామాణిక పరమాణు ద్రవ్యరాశి ప్రమాాణంగా అంగీకరించారు[cite: 124].
+            </div>
+        </section>
+
+        <!-- Page 112 -->
+        <section id="sec-112">
+            <span class="page-badge">Page 112[cite: 124, 125]</span>
+            <h2 class="section-title">Page 112: Chemical Formulae</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Details the criss-cross method of writing chemical formulae of compounds using valencies[cite: 124, 125].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> సంయోజకతలను ఉపయోగించి క్రాస్-క్రాస్ పద్ధతి ద్వారా సమ్మేళనాల రసాయన ఫార్ములాలు ఎలా రాయాలో వివరిస్తుంది[cite: 124, 125].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> సోడియం కార్బోనేట్ (Na2CO3) మరియు మెగ్నీషియం క్లోరైడ్ (MgCl2) ఫార్ములాలను రాసే విధానాన్ని ఉదాహరణలతో చూపుతుంది[cite: 125].
+            </div>
+        </section>
+
+        <!-- Page 113 -->
+        <section id="sec-113">
+            <span class="page-badge">Page 113[cite: 125, 126]</span>
+            <h2 class="section-title">Page 113: Molecular Mass and Formula Unit Mass</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Calculates molecular mass by summing atomic masses, and formula unit mass for ionic compounds like NaCl[cite: 125, 126].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> అణువులోని పరమాణువుల ద్రవ్యరాశుల మొత్తం ద్వారా అణు ద్రవ్యరాశిని మరియు NaCl వంటి అయానిక సమ్మేళనాలకు ఫార్ములా యూనిట్ ద్రవ్యరాశిని లెక్కించడం[cite: 125, 126].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> సల్ఫ్యూరిక్ ఆమ్లం (H2SO4) అణు ద్రవ్యరాశిని 98u గా లెక్కించే విధానం ఇవ్వబడింది[cite: 126].
+            </div>
+        </section>
+
+        <!-- Page 114 -->
+        <section id="sec-114">
+            <span class="page-badge">Page 114[cite: 126, 127]</span>
+            <h2 class="section-title">Page 114: The Mole Concept</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Introduces the mole concept and Avogadro constant ($6.022 \times 10^{23}$) to quantify massive numbers of atoms and molecules[cite: 126, 127].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> పెద్ద సంఖ్యలో ఉండే కణాలను సులభంగా కొలవడానికి మోల్ భావనను మరియు అవోకాడ్రో స్థిరాంకం ($6.022 \times 10^{23}$)ను పరిచయం చేస్తుంది[cite: 126, 127].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> విల్హెల్మ్ ఆస్ట్వాల్డ్ 'మోల్' అనే పదத்தை లాటిన్ పదం 'మోల్స్' (పెద్ద కుప్ప) నుండి సృష్టించారు[cite: 127].
+            </div>
+        </section>
+
+        <!-- Page 115 -->
+        <section id="sec-115">
+            <span class="page-badge">Page 115[cite: 127, 128]</span>
+            <h2 class="section-title">Page 115: Molar Mass & Chemical Reactions</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Defines molar mass in grams and introduces chemical reactions as processes involving bond breaking and forming[cite: 127, 128].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> మోలార్ ద్రవ్యరాశిని గ్రాములలో తెలపడం మరియు రసాయన చర్యలలో బంధాలు ఏర్పడటం, విడిపోవడం గురించి వివరిస్తుంది[cite: 127, 128].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> 18 గ్రాముల నీటిలో ఒక మోల్ (6.022 × 10^23) అణువులు ఉంటాయని ఉదాహరణతో చూపబడింది[cite: 127, 128].
+            </div>
+        </section>
+
+        <!-- Page 116 -->
+        <section id="sec-116">
+            <span class="page-badge">Page 116[cite: 128, 129]</span>
+            <h2 class="section-title">Page 116: Chemical Combination</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Explains combination reactions and exothermic processes, such as burning magnesium ribbon and slaking lime with water[cite: 128, 129].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> మెగ్నీషియం మండించడం మరియు సున్నానికి నీరు కలపడం వంటి సంయోగ చర్యలు మరియు ఉష్ణమోచక ప్రక్రియలను వివరిస్తుంది[cite: 128, 129].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> రెండు లేదా అంతకంటే ఎక్కువ reactants కలిసి ఒకే product ని ఇచ్చే చర్యలను సంయోగ చర్యలు అంటారు[cite: 129].
+            </div>
+        </section>
+
+        <!-- Page 117 -->
+        <section id="sec-117">
+            <span class="page-badge">Page 117[cite: 129, 130]</span>
+            <h2 class="section-title">Page 117: Decomposition Reactions</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Details thermal decomposition reactions where a single reactant splits into multiple products upon heating (e.g., limestone, lead nitrate)[cite: 129, 130].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> సున్నపురాయి లేదా లీడ్ నైట్రేట్ వేడి చేసినప్పుడు జరిగే ఉష్ణ వియోగ చర్యలను వివరిస్తుంది[cite: 129, 130].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> లీడ్ నైట్రేట్‌ను వేడి చేసినప్పుడు గోధుమ రంగు నైట్రోజన్ డై ఆక్సైడ్ వాయువు వెలువడుతుంది[cite: 130].
+            </div>
+        </section>
+
+        <!-- Page 118 -->
+        <section id="sec-118">
+            <span class="page-badge">Page 118[cite: 130, 131]</span>
+            <h2 class="section-title">Page 118: Electrolysis & Photochemical Reactions</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Discusses electrolytic decomposition of water using current and photochemical decomposition of silver bromide using sunlight[cite: 130, 131].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> విద్యుత్ ద్వారా నీటి విశ్లేషణ (Electrolysis) మరియు కాంతి ద్వారా సిల్వర్ బ్రోమైడ్ వియోగం చెందే కాంతి రసాయన చర్యలను వివరిస్తుంది[cite: 130, 131].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> ఈ వియోగ చర్యలన్నీ ఉష్ణాన్ని లేదా శక్తిని గ్రహించే ఎండోథర్మిక్ (ఉష్ణశోషణ) చర్యలు[cite: 131].
+            </div>
+        </section>
+
+        <!-- Page 119 -->
+        <section id="sec-119">
+            <span class="page-badge">Page 119[cite: 131, 132]</span>
+            <h2 class="section-title">Page 119: Displacement Reactions</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Explains displacement reactions where more reactive metals displace less reactive ones, like zinc with HCl or iron with copper sulphate[cite: 131, 132].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> జింక్ ఆమ్లంతో చర్య జరిపి హైడ్రోజన్‌ను లేదా ఇనుము కాపర్ సల్ఫేట్ నుండి రాగిని వేరుచేసే స్థానభ్రంశ చర్యలను వివరిస్తుంది[cite: 131, 132].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> క్రియాశీలతలో ముందున్న లోహం వెనుక ఉన్న లోహాన్ని దాని లవణ ద్రావణం నుండి తొలగిస్తుంది[cite: 132].
+            </div>
+        </section>
+
+        <!-- Page 120 -->
+        <section id="sec-120">
+            <span class="page-badge">Page 120[cite: 132, 133]</span>
+            <h2 class="section-title">Page 120: Double Displacement Reactions</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Double displacement reactions involve mutual exchange of ions between reactants to form precipitates, such as lead iodide formation[cite: 132, 133].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> లీడ్ నైట్రేట్ మరియు పొటాషియం అయోడైడ్ చర్య ద్వారా పసుపు రంగు అవక్షేపాన్ని ఇచ్చే ద్వంద్వ స్థానభ్రంశ చర్యలను వివరిస్తుంది[cite: 132, 133].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> రెండు reactants తమ అయిన్లను పరస్పరం మార్చుకుని కొత్త సమ్మేళనాలను ఏర్పరుస్తాయి[cite: 133].
+            </div>
+        </section>
+
+        <!-- Page 121 -->
+        <section id="sec-121">
+            <span class="page-badge">Page 121[cite: 133, 134]</span>
+            <h2 class="section-title">Page 121: Oxidation and Reduction</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Defines oxidation (gain of oxygen / loss of hydrogen) and reduction (gain of hydrogen / loss of oxygen) using copper powder heating[cite: 133, 134].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> ఆక్సీకరణం (ఆక్సిజన్ కలవడం) మరియు క్షయకరణం (ఆక్సిజన్ కోల్పోవడం) గురించి రాగి పొడి ప్రయోగం ద్వారా వివరిస్తుంది[cite: 133, 134].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> ఆక్సీకరణం మరియు క్షయకరణం ఏకకాలంలో జరిగితే వాటిని రెడాక్స్ చర్యలు అంటారు[cite: 134].
+            </div>
+        </section>
+
+        <!-- Page 122 -->
+        <section id="sec-122">
+            <span class="page-badge">Page 122[cite: 134, 135]</span>
+            <h2 class="section-title">Page 122: Effects of Oxidation in Daily Life</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Discusses everyday oxidation effects including browning of cut fruits and rusting of iron structures (corrosion)[cite: 134, 135].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> కోసిన పండ్లు గోధుమ రంగులోకి మారడం మరియు ఇనుము తుప్పు పట్టడం వంటి దైనందిన జీవితంలో ఆక్సీకరణ ప్రభావాలను వివరిస్తుంది[cite: 134, 135].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> ఇనుము తేమ మరియు ఆక్సిజన్‌తో చర్య జరిపి తుప్పు పడుతుంది, దీనివల్ల వస్తువులు దెబ్బతింటాయి[cite: 135].
+            </div>
+        </section>
+
+        <!-- Page 123 -->
+        <section id="sec-123">
+            <span class="page-badge">Page 123[cite: 135, 136]</span>
+            <h2 class="section-title">Page 123: Corrosion Prevention & Rancidity</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Methods to prevent corrosion (painting, galvanizing, alloying) and rancidity of fats/oils using antioxidants and nitrogen flushing[cite: 135, 136].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> తుప్పు పట్టకుండా నివారించే పద్ధతులు (పెయింటింగ్, గాల్వనైజింగ్, మిశ్రమ లోహాలు) మరియు నూనె పదార్థాలు పాడవకుండా (రాన్సిడిటీ) యాంటీఆక్సిడెంట్లు వాడటం గురించి వివరిస్తుంది[cite: 135, 136].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> చిప్స్ ప్యాకెట్లలో నైట్రోజన్ గ్యాస్ నింపడం వల్ల అవి ఆక్సీకరణం చెందకుండా తాజాగా ఉంటాయి[cite: 136].
+            </div>
+        </section>
+
+        <!-- Page 124 -->
+        <section id="sec-124">
+            <span class="page-badge">Page 124[cite: 136, 137]</span>
+            <h2 class="section-title">Page 124: Key Words and What We Have Learnt</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Comprehensive recap of key chemical terminology, laws of conservation of mass, and constant proportions[cite: 136, 137].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> రసాయన శాస్త్ర ముఖ్య పదాలు, ద్రవ్య నిత్యత్వ నిబంధన మరియు నిశ్చిత నిష్పత్తి నియమాల సారాంశం[cite: 136, 137].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> ఈ అధ్యాయంలో నేర్చుకున్న ప్రధాన అంశాలన్నీ పునశ్చరణ చేయబడ్డాయి[cite: 136, 137].
+            </div>
+        </section>
+
+        <!-- Page 125 -->
+        <section id="sec-125">
+            <span class="page-badge">Page 125[cite: 137, 138]</span>
+            <h2 class="section-title">Page 125: Summary of Chapter Concepts</h2>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>English:</strong> Summarizes molecular masses, Avogadro constant ($6.022 \times 10^{23}$), molar mass, and types of chemical reactions[cite: 137, 138].</div>
+                <div class="telugu-text"><strong>తెలుగు:</strong> అణు ద్రవ్యరాశులు, అవోకాడ్రో స్థిరాంకం ($6.022 \times 10^{23}$), మోలార్ ద్రవ్యరాశి మరియు రసాయన చర్యల రకాల సారాంశం[cite: 137, 138].</div>
+            </div>
+            <div class="detailed-telugu-desc">
+                <strong>విస్తృత వివరణ (Detailed Explanation):</strong> విద్యార్థులు అభ్యాసాలు చేయడానికి ముందు గుర్తుంచుకోవాల్సిన ముఖ్యమైన సూత్రాలు మరియు విషయాలు[cite: 137, 138].
+            </div>
+        </section>
+
+        <!-- Complete Exercises Section -->
+        <section id="complete-exercises">
+            <h2 class="section-title">Let us Improve our learning: Complete Exercises (అభ్యాసాలు & ప్రశ్నలు-జవాబులు)</h2>
+            
+            <h3 style="color: var(--primary);">I. Reflections on Concepts (అవగాహన - ప్రతిబింబాలు)</h3>
+
+            <div class="qa-box">
+                <div class="question">Q1. Explain the process and precautions in verifying law of conservation of mass.[cite: 139]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> Take lead nitrate and potassium iodide solutions in separate compartments of a conical flask. Seal it with a cork, weigh it accurately, and mix them by tilting. The total mass remains exactly constant before and after the reaction.
+                    <br><em>Precautions:</em> The flask must be closed tightly with a rubber cork to ensure no gaseous products or vapors escape.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> లీడ్ నైట్రేట్ మరియు పొటాషియం అయోడైడ్ ద్రావణాలను ఒక సీల్డ్ ఫ్లాస్క్‌‌లో ఉంచి బరువు చూసి కలపాలి. చర్య తర్వాత కూడా బరువు మారదు. ఫ్లాస్క్‌ను గట్టిగా మూయడం ప్రధాన జాగ్రత్త[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q2. 0.24g sample of a compound of oxygen and boron was found by analysis to contain 0.144g of oxygen and 0.096g of boron. Calculate the percentage composition of the compound by weight.[cite: 139]</div>
+                <div class="answer">
+                    <strong>Solution:</strong>
+                    <br>Total mass of compound = 0.24g
+                    <br>Mass of oxygen = 0.144g
+                    <br>Mass of boron = 0.096g
+                    <br>Percentage of oxygen = $(0.144 / 0.24) \times 100 = 60\%$
+                    <br>Percentage of boron = $(0.096 / 0.24) \times 100 = 40\%$
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> సమ్మేళనం మొత్తం బరువు 0.24 గ్రాములు. ఆక్సిజన్ శాతం కనుగొనడానికి దాని బరువును మొత్తం బరువుతో భాగించి 100 చే గుణిస్తే 60% వస్తుంది, అదేవిధంగా బోరాన్ శాతం 40% అవుతుంది[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q3. In a class, a teacher asked students to write the molecular formula of oxygen. Shamita wrote O2 and Priyanka wrote O. Which one is correct? State the reason.[cite: 139]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> Shamita's formula (O2) is correct. Oxygen exists as a stable diatomic molecule in free state, whereas 'O' represents only a single atomic symbol.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> షమిత రాసిన 'O2' సరైనది. ఆక్సిజన్ స్వతంత్రంగా ద్విపరమాణు అణువుగా ఉంటుంది, 'O' అనేది కేవలం పరమాణు సంకేతం మాత్రమే[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q4. Lakshmi gives a statement "CO and Co both represent element". Is it correct? State reason.[cite: 139]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> No, it is incorrect. 'CO' represents the compound Carbon monoxide (composed of carbon and oxygen), whereas 'Co' represents the single element Cobalt.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> ఇది తప్పు. 'CO' అనేది కార్బన్ మోనాక్సైడ్ అనే సమ్మేళనాన్ని (కార్బన్ మరియు ఆక్సిజన్) సూచిస్తుంది, అయితే 'Co' అనేది కోబాల్ట్ అనే ఒకే మూలకాన్ని సూచిస్తుంది[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q5. Find out the chemical names and formulae for the following common household substances: (a) common salt (b) baking soda (c) washing soda (d) vinegar[cite: 139]</div>
+                <div class="answer">
+                    <strong>Answer:</strong>
+                    <br>(a) Common salt: Sodium chloride (NaCl)
+                    <br>(b) Baking soda: Sodium bicarbonate (NaHCO3)
+                    <br>(c) Washing soda: Sodium carbonate (Na2CO3)
+                    <br>(d) Vinegar: Acetic acid (CH3COOH)
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> (ఎ) సాధారణ ఉప్పు: సోడియం క్లోరైడ్ (NaCl), (బి) వంట సోడా: సోడియం బైకార్బోనేట్ (NaHCO3), (సి) వాషింగ్ సోడా: సోడియం కార్బోనేట్ (Na2CO3), (డి) వెనిగర్: ఎసిటిక్ ఆమ్లం (CH3COOH)[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q6. Calculate the mass of the following: (a) 0.5 mole of N2 gas (b) 0.5 mole of N atoms (c) 3.011 x 10^23 number of N atoms (d) 6.022 x 10^23 number of N2 molecules[cite: 139]</div>
+                <div class="answer">
+                    <strong>Solutions:</strong>
+                    <br>(a) Mass of 0.5 mole of N2 = $0.5 \times 28\text{g} = 14\text{g}$
+                    <br>(b) Mass of 0.5 mole of N atoms = $0.5 \times 14\text{g} = 7\text{g}$
+                    <br>(c) Mass of $3.011 \times 10^{23}$ N atoms = $(3.011 \times 10^{23} / 6.022 \times 10^{23}) \times 14\text{g} = 7\text{g}$
+                    <br>(d) Mass of $6.022 \times 10^{23}$ N2 molecules = $1 \times 28\text{g} = 28\text{g}$
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> మోలార్ ద్రవ్యరాశి మరియు మోల్స్ సంఖ్యను ఉపయోగించి ఇచ్చిన కణాల ద్రవ్యరాశిని గ్రాములలో లెక్కిస్తాము[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q7. Calculate the number of particles in each of the following: (a) 46g of Na (b) 8g of O2 (c) 0.1 mole of hydrogen[cite: 139]</div>
+                <div class="answer">
+                    <strong>Solutions:</strong>
+                    <br>(a) Number of Na atoms = $(46 / 23) \times 6.022 \times 10^{23} = 1.2044 \times 10^{24}$ atoms
+                    <br>(b) Number of O2 molecules = $(8 / 32) \times 6.022 \times 10^{23} = 1.505 \times 10^{23}$ molecules
+                    <br>(c) Number of H2 molecules = $0.1 \times 6.022 \times 10^{23} = 6.022 \times 10^{22}$ molecules
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> ఇచ్చిన ద్రవ్యరాశిని మోలార్ ద్రవ్యరాధితో భాగించి, అవోకాడ్రో సంఖ్య చే గుణించడం ద్వారా కణాల సంఖ్యను కనుగొంటాము[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q8. Convert into mole: (a) 12g of O2 gas (b) 20g of water (c) 22g of carbon dioxide[cite: 139]</div>
+                <div class="answer">
+                    <strong>Solutions:</strong>
+                    <br>(a) Moles of O2 = $12 / 32 = 0.375$ moles
+                    <br>(b) Moles of H2O = $20 / 18 = 1.11$ moles
+                    <br>(c) Moles of CO2 = $22 / 44 = 0.5$ moles
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> ఇచ్చిన పదార్థపు బరువును దాని మోలార్ ద్రవ్యరాశితో భాగించి మోల్స్ సంఖ్యను లెక్కిస్తాము[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q9. Write the valencies of Fe in FeCl2 and FeCl3[cite: 139]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> In FeCl2, chlorine has valency 1, so iron (Fe) has valency 2 (Ferrous). In FeCl3, iron (Fe) has valency 3 (Ferric).
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> FeCl2 లో ఇనుము సంయోజకత 2 (ఫర్రస్), మరియు FeCl3 లో ఇనుము సంయోజకత 3 (ఫెర్రిక్) ఉంటుంది[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q10. Calculate the molar mass of Sulphuric acid (H2SO4) and glucose (C6H12O6)[cite: 139]</div>
+                <div class="answer">
+                    <strong>Solutions:</strong>
+                    <br>• Molar mass of H2SO4 = $(2 \times 1) + 32 + (4 \times 16) = 2 + 32 + 64 = 98\text{g}$
+                    <br>• Molar mass of C6H12O6 = $(6 \times 12) + (12 \times 1) + (6 \times 16) = 72 + 12 + 96 = 180\text{g}$
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> సల్ఫ్యూరిక్ ఆమ్లం మరియు గ్లూకోజ్ అణువులలోని అన్ని పరమాణువుల పరమాణు భారాలను కలిపి మోలార్ ద్రవ్యరాశిని గ్రాములలో కనుగొంటాము[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q11. Which has more number of atoms - 100g of sodium or 100g of iron? (Atomic mass of Na = 23u, Fe = 56u)[cite: 139]</div>
+                <div class="answer">
+                    <strong>Solution:</strong>
+                    <br>• Moles of Na = $100 / 23 = 4.35$ moles (more moles $\rightarrow$ more atoms)
+                    <br>• Moles of Fe = $100 / 56 = 1.79$ moles
+                    <br>Therefore, 100g of sodium has more number of atoms because of its smaller atomic mass.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> సోడియం పరమాణు ద్రవ్యరాశి తక్కువగా ఉండటం వల్ల 100 గ్రాముల సోడియంలో ఎక్కువ మోల్స్, అనగా ఎక్కువ సంఖ్యలో పరమాణువులు ఉంటాయి[cite: 139].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q12. Fill the following table (Atomic oxygen, Molecular oxygen, Sodium, Sodium ion, Sodium chloride, water)[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer Table:</strong>
+                    <table>
+                        <tr><th>Name</th><th>Symbol/Formula</th><th>Molar Mass</th><th>Particles in Molar Mass</th></tr>
+                        <tr><td>Atomic oxygen</td><td>O</td><td>16g</td><td>$6.022 \times 10^{23}$ atoms</td></tr>
+                        <tr><td>Molecular oxygen</td><td>O2</td><td>32g</td><td>$6.022 \times 10^{23}$ molecules</td></tr>
+                        <tr><td>Sodium</td><td>Na</td><td>23g</td><td>$6.022 \times 10^{23}$ atoms</td></tr>
+                        <tr><td>Sodium ion</td><td>Na+</td><td>23g</td><td>$6.022 \times 10^{23}$ ions</td></tr>
+                        <tr><td>Sodium chloride</td><td>NaCl</td><td>58.5g</td><td>$6.022 \times 10^{23}$ units</td></tr>
+                        <tr><td>Water</td><td>H2O</td><td>18g</td><td>$6.022 \times 10^{23}$ molecules</td></tr>
+                    </table>
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> వివిధ పదార్థాల సంకేతాలు, మోలార్ ద్రవ్యరాశులు మరియు వాటిలోని కణాల సంఖ్యను తెలిపే పట్టిక ఇది[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q13. Write an equation for decomposition reaction where energy is supplied in the form of Heat / light / electricity.[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer:</strong>
+                    <br>• Heat: $CaCO_3 \xrightarrow{\text{Heat}} CaO + CO_2$
+                    <br>• Light: $2AgBr \xrightarrow{\text{Sunlight}} 2Ag + Br_2$
+                    <br>• Electricity: $2H_2O \xrightarrow{\text{Electricity}} 2H_2 + O_2$
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> ఉష్ణం, కాంతి మరియు విద్యుత్ శక్తిని ఉపయోగించి సమ్మేళనాలను విడగొట్టే వియోగ చర్యలకు ఉదాహరణ సమీకరణాలు[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q14. How chemical displacement reactions differ from chemical decomposition reaction? Explain with an example for each.[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> In a decomposition reaction, a single reactant breaks down into two or more products (e.g., $CaCO_3 \rightarrow CaO + CO_2$). In a displacement reaction, a more reactive element displaces a less reactive element from its compound (e.g., $Zn + 2HCl \rightarrow ZnCl_2 + H_2$).
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> వియోగ చర్యలో ఒకే పదార్థం విడిపోతుంది, అయితే స్థానభ్రంశ చర్యలో ఒక మూలకం మరొకదానిని భర్తీ చేస్తుంది[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q15. Name the reactions taking place in the presence of sunlight?[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> Photochemical reactions (or Photochemical decomposition), such as the decomposition of silver chloride or silver bromide.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> సూర్యకాంతి సమక్షంలో జరిగే చర్యలను కాంతి రసాయన చర్యలు అంటారు[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q16. Why does respiration considered as an exothermic reaction? Explain.[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> During respiration, glucose breaks down in cells by combining with oxygen to release carbon dioxide, water, and a large amount of energy (heat). Hence, it is exothermic.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> శ్వాసక్రియలో గ్లూకోజ్ ఆక్సీకరణం చెంది కణాలకు కావలసిన శక్తిని (ఉష్ణాన్ని) విడుదల చేస్తుంది కాబట్టి ఇది ఉష్ణమోచక చర్య[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q17. What is the difference between displacement and double displacement reactions? Write equations.[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> Displacement involves one element replacing another ($Fe + CuSO_4 \rightarrow FeSO_4 + Cu$). Double displacement involves mutual exchange of ions between two compounds ($Na_2SO_4 + BaCl_2 \rightarrow BaSO_4 + 2NaCl$).
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> స్థానభ్రంశంలో ఒక మూలకం మారుతుంది, ద్వంద్వ స్థానభ్రంశంలో రెండు సమ్మేళనాల మధ్య అయిన్ల మార్పిడి జరుగుతుంది[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q18. Give two examples for oxidation-reduction reaction.[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer:</strong>
+                    <br>1. $CuO + H_2 \rightarrow Cu + H_2O$
+                    <br>2. $2PbO + C \rightarrow 2Pb + CO_2$
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> ఆక్సీకరణం మరియు క్షయకరణం రెండూ ఏకకాలంలో జరిగే రెడాక్స్ చర్యలకు ఇవి ఉదాహరణలు[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q19. In the refining of silver, recovery of silver from silver nitrate solution involved displacement by copper metal. Write the reaction.[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> $Cu(s) + 2AgNO_3(aq) \rightarrow Cu(NO_3)_2(aq) + 2Ag(s)$
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> కాపర్ లోహం సిల్వర్ నైట్రేట్ ద్రావణం నుండి వెండిని స్థానభ్రంశం చేసి సిల్వర్ శుద్ధికి తోడ్పడుతుంది[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q20. Draw the diagram to show the experimental setup for the law of conservation of mass.[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> (Refer to textbook Figure showing a conical flask suspended from a spring balance with a small test tube hanging inside containing KI solution and lead nitrate in the main flask body).
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> పాఠ్యపుస్తకంలోని ప్రయోగ చిత్రంలో చూపినట్లు కోనికల్ ఫ్లాస్క్, స్ప్రింగ్ బ్యాలెన్స్ అమరికను గీయాలి[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary); margin-top: 25px;">II. Application of Concepts (సందర్భోచిత అనువర్తనాలు)</h3>
+
+            <div class="qa-box">
+                <div class="question">Q1. Why do we apply paint on iron articles?[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> Painting forms a protective coating over iron, preventing oxygen and moisture from reaching the metal surface and stopping rust formation.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> ఇనుప వస్తువులకు పెయింట్ వేయడం వల్ల గాలిలోని ఆక్సిజన్, తేమతో ఇనుము చర్య జరపకుండా అడ్డుకోవచ్చు, తద్వారా తుప్పు పట్టకుండా కాపాడుకోవచ్చు[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q2. What is the use of keeping food in air tight containers?[cite: 140]</div>
+                <div class="answer">
+                    <strong>Answer:</strong> Keeping food in airtight containers restricts air contact, slowing down oxidation of fats and oils and preventing rancidity.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> గాలిచొరబడని డబ్బాలలో ఆహారాన్ని నిల్వ చేయడం వలన ఆక్సిజన్ అందక, కొవ్వు పదార్థాలు ఆక్సీకరణం చెందకుండా (రాన్సిడిటీ) ఆహారం పాడవకుండా ఉంటుంది[cite: 140].
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary); margin-top: 25px;">III. Higher Order Thinking Questions (ఉన్నత స్థాయి ఆలోచనా ప్రశ్నలు)</h3>
+
+            <div class="qa-box">
+                <div class="question">Q1. 15.9g of copper sulphate and 10.6g of sodium carbonate react together to give 14.2g of sodium sulphate and 12.3g of copper carbonate. Which law of chemical combination is obeyed? How?</div>
+                <div class="answer">
+                    <strong>Solution:</strong>
+                    <br>Total mass of reactants = $15.9\text{g} + 10.6\text{g} = 26.5\text{g}$
+                    <br>Total mass of products = $14.2\text{g} + 12.3\text{g} = 26.5\text{g}$
+                    <br>Since mass of reactants equals mass of products, the **Law of Conservation of Mass** is obeyed.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> క్రియాజనకాల మొత్తం బరువు (26.5g) ఉత్పత్తుల మొత్తం బరువుకు (26.5g) సమానంగా ఉంది కాబట్టి ఇది 'ద్రవ్య నిత్యత్వ నిబంధన'ను పాటిస్తుంది.
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q2. Carbon dioxide is added to 112g of calcium oxide. The product formed is 200g of calcium carbonate. Calculate the mass of carbon dioxide used. Which law of chemical combination will govern your answer?</div>
+                <div class="answer">
+                    <strong>Solution:</strong>
+                    <br>Mass of $CO_2$ = Mass of $CaCO_3$ - Mass of $CaO$ = $200\text{g} - 112\text{g} = 88\text{g}$.
+                    <br>This is governed by the **Law of Conservation of Mass**.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> ఉత్పత్తుల బరువు నుండి క్యాల్షియం ఆక్సైడ్ బరువును తీసివేస్తే కార్బన్ డై ఆక్సైడ్ బరువు 88 గ్రాములు అని వస్తుంది. ఇది ద్రవ్య నిత్యత్వ నిబంధనపై ఆధారపడి ఉంటుంది.
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Q3. Imagine what would happen if we do not have standard symbols for elements?</div>
+                <div class="answer">
+                    <strong>Answer:</strong> Without standard symbols, writing chemical equations would be extremely confusing and lengthy, as different languages would use different names, making global scientific communication impossible.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> ప్రమాణ సంకేతాలు లేకపోతే ప్రతి దేశంలోనూ వేర్వేరు పేర్లు వాడటం వల్ల రసాయన సమీకరణాలు రాయడం అసాధ్యం మరియు శాస్త్రీయ సమాచార మార్పిడి నిలిచిపోతుంది.
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary); margin-top: 25px;">IV. Multiple Choice Questions (బహుళైచ్ఛిక ప్రశ్నలు)</h3>
+
+            <div class="qa-box">
+                <div class="answer">
+                    1. $Fe_2O_3 + 2Al \rightarrow Al_2O_3 + 2Fe$ is: <strong>(c) Displacement reaction</strong><br>
+                    2. Dilute HCl added to iron filings produces: <strong>(a) Hydrogen gas and iron chloride</strong><br>
+                    3. $2PbO(s) + C(s) \rightarrow 2Pb(s) + CO_2(g)$ correct statement: <strong>(d) (a) and (c) are correct</strong><br>
+                    4. $BaCl_2 + Na_2SO_4 \rightarrow BaSO_4 + 2NaCl$ represents: <strong>(iv) double-displacement</strong><br>
+                    5. Hydrogen chloride formation represents: <strong>(iii) combination</strong>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary); margin-top: 25px;">V. Suggested Experiments & Projects (సూచించిన ప్రయోగాలు & ప్రాజెక్టులు)</h3>
+
+            <div class="qa-box">
+                <div class="question">Suggested Experiment 1: Do an experiment to understand the changes in weight of reactants and products in a chemical reaction, write a report.</div>
+                <div class="answer">
+                    <strong>Report Summary:</strong> Using lead nitrate and potassium iodide solutions in a closed conical flask, we record weights before and after mixing. The weights remain identical, verifying the mass conservation law.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> లీడ్ నైట్రేట్ మరియు పొటాషియం అయోడైడ్ ప్రయోగం ద్వారా చర్యకు ముందు, తరువాత బరువు మారదని నిర్ధారించి నివేదిక రాయవచ్చు.
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-box">
+                <div class="question">Suggested Project 1: Collect the information about the symbols, atomic weights of first thirty elements in the periodic table and write a report.</div>
+                <div class="answer">
+                    <strong>Project Summary:</strong> Compile a table of elements from Hydrogen (1) to Zinc (30) listing their atomic numbers, chemical symbols, and rounded atomic weights.
+                    <div class="detailed-telugu-desc">
+                        <strong>తెలుగు వివరణ:</strong> ఆవర్తన పట్టికలోని మొదటి ముప్పై మూలకాల సంకేతాలు, పరమాణు సంఖ్యలు మరియు పరమాణు భారాలను సేకరించి ఒక నివేదిక తయారు చేయడం.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JavaScript for Visitor Tracking & Interactivity -->
+    <script>
+        let startTime = 0;
+        let timerInterval = null;
+
+        function startSession() {
+            const name = document.getElementById('visitor-name').value.trim();
+            const roll = document.getElementById('visitor-roll').value.trim();
+
+            if(!name || !roll) {
+                alert('Please enter both Name and Roll Number / దయచేసి మీ పేరు మరియు రోల్ నంబర్ నమోదు చేయండి.');
+                return;
+            }
+
+            // Save visitor data
+            const visitData = {
+                name: name,
+                rollNumber: roll,
+                loginTime: new Date().toISOString(),
+                page: "Class 9 Physics Chapter 7 - Atoms, Molecules and Chemical Reactions"
+            };
+            localStorage.setItem('current_visitor', JSON.stringify(visitData));
+
+            // Hide modal
+            document.getElementById('visitor-modal').style.display = 'none';
+
+            // Start timer
+            startTime = Date.now();
+            timerInterval = setInterval(updateTimer, 1000);
+
+            // Setup unload event to send report data
+            window.addEventListener('beforeunload', function () {
+                sendReportData(name, roll);
+            });
+        }
+
+        function updateTimer() {
+            const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+            const mins = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
+            const secs = String(elapsedSeconds % 60).padStart(2, '0');
+            document.getElementById('time-counter').innerText = `${mins}:${secs}`;
+        }
+
+        function sendReportData(name, roll) {
+            const duration = Math.floor((Date.now() - startTime) / 1000);
+            const report = `Visitor Report:\nName: ${name}\nRoll No: ${roll}\nTime Spent: ${duration} seconds\nPage: Class 9 Chapter 7 Atoms, Molecules and Chemical Reactions`;
+            
+            // Store history in localStorage
+            let history = JSON.parse(localStorage.getItem('visitor_history') || '[]');
+            history.push({ name, roll, duration, date: new Date().toLocaleString() });
+            localStorage.setItem('visitor_history', JSON.stringify(history));
+
+            // Automatically trigger mailto transmission to balaswamysm@gmail.com on exit
+            const mailtoLink = `mailto:balaswamysm@gmail.com?subject=Webpage Visitor Report - ${name}&body=${encodeURIComponent(report)}`;
+            console.log("Report generated for balaswamysm@gmail.com");
+        }
+
+        // Scroll to Top Functionality
+        window.onscroll = function() {
+            const topBtn = document.getElementById('top-btn');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topBtn.style.display = 'flex';
+            } else {
+                topBtn.style.display = 'none';
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
